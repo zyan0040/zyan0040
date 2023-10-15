@@ -1,14 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=zyan0040.html">
+<html>
+  <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+    <meta charset="utf-8">
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <style>
+      .one {
+        display: flex;
+        flex-direction: row;
+      }
+      .two {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .three {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .five {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .six {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .container {
+        width: 87%;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Billionaires Statistics ——Exploring the Global Landscape of Success</h1>
+    <div class="container">
+      <div class="one">
+        <div id="billionaires_map"></div>
+        <div class="desc">
+          <h2>Billionaires Map</h2>
+          <p>This map showcases the geographical distribution of billionaires around the world, based on the "Billionaires Statistics Dataset". Countries are color-coded based on the number of billionaires they house; darker shades represent a higher count. By hovering over each country, detailed information about the number of billionaires and their cumulative net worth is displayed. This visualization not only provides insights into the wealth concentration in various countries but also reflects the global economic landscapes and the regions that attract wealthy entrepreneurs and business magnates.</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <div class="two">
+        <div id="v1"></div>
+        <div class="desc">
+          <h2>Top 10 Countries with Most Billionaires</h2>
+          <p>This bar chart showcases the ten countries with the highest number of billionaires. It provides insights into the geographical distribution of the world's wealthiest individuals, indicating the countries that serve as significant hubs for high net worth individuals.</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <div class="three">
+        <div id="v2"></div>
+        <div class="desc">
+          <h2>Distribution of Wealth Sources among Billionaires</h2>
+          <p>The pie chart visualizes the distribution of sources from which billionaires have amassed their wealth. It gives an understanding of the dominant sectors or industries that have produced the most billionaires.</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <div class="five">
+        <div id="v4"></div>
+        <div class="desc">
+          <h2>Number of Billionaires by Average Life Expectancy of Countries</h2>
+          <p>The line chart portrays the number of billionaires in relation to the average life expectancy of countries. It provides insights into whether countries with higher life expectancies tend to have more billionaires.</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <div class="six">
+        <div id="v5"></div>
+        <div class="desc">
+          <h2>Top 10 Richest Billionaires </h2>
+          <p>This bar chart showcases the top ten richest billionaires based on their net worth. It highlights the pinnacle of wealth accumulation, showcasing individuals who have achieved unparalleled financial success.</p>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
-        setTimeout(function() {
-            window.location.href = "zyan0040.html";
-        }, 1000);
+
+      var spec1 = "./js/billionaires_map_spec.json";
+      vegaEmbed('#billionaires_map', spec1).then(function(result) {
+      }).catch(console.error);
+
+      var v1= "./js/vega_lite_spec_1.json";
+      vegaEmbed('#v1', v1).then(function(result) {
+      }).catch(console.error);
+
+      var v2= "./js/vega_lite_spec_2.json";
+      vegaEmbed('#v2', v2).then(function(result) {
+      }).catch(console.error);
+
+      var v3= "./js/vega_lite_spec_3.json";
+      vegaEmbed('#v3', v3).then(function(result) {
+      }).catch(console.error);
+
+      var v4= "./js/vega_lite_spec_4.json";
+      vegaEmbed('#v4', v4).then(function(result) {
+      }).catch(console.error);
+
+      var v5= "./js/vega_lite_spec_5.json";
+      vegaEmbed('#v5', v5).then(function(result) {
+      }).catch(console.error);
+
     </script>
-</head>
-<body>
-</body>
+
+  </body>
 </html>
